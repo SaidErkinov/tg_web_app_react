@@ -5,8 +5,9 @@ import Button from '../Button/Button'
 const ProductItem = ({product, className, onAdd}) => {
 
     const onAddHandler = () => {
-    
+        onAdd(product)
     }
+
     return (
         <div className={'product' + className}>
             <div className={'img'}/>
@@ -22,3 +23,4 @@ const ProductItem = ({product, className, onAdd}) => {
         </div>
     )
 }
+export default ProductItem
