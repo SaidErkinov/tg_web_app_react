@@ -1,7 +1,7 @@
-import React, { Profiler, useState } from "react";
+import React, { useState } from "react";
 import "./ProductList.css";
 import ProductItem from '../ProductItem/ProductItem.jsx'
-import {useTelegram} from "../../hooks/useTelegram"
+import {useTelegram} from '../../hooks/useTelegram.js'
 
 const products = [
   {id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые'},
@@ -21,7 +21,8 @@ const getTotalPrice = ( items = []) => {
 }
 
 const ProductList = () => {
-    const [addedItems, setAddedItems] = useState( []);
+    const [addedItems, setAddedItems] = useState([]);
+    const {tg} = useTelegram()
  
     const onAdd = (product) =>{
         const alreadyAdded = addedItems.find(item => item.id === product.id);
